@@ -39,7 +39,7 @@
           use command as: "./script_name.sh create site_name" <br>
           In our case, the command will be 
           
-            ./wordpress_script.sh create site1”
+            ./wordpress_script.sh create site1
 
       {Here site1 is the name of our website}
   
@@ -52,7 +52,7 @@
           “./script_name manage site_name disable” <br>
           In our case, the command will be 
           
-                  “./wordpress_script.sh manage site1 disable”
+                  ./wordpress_script.sh manage site1 disable
 
       {After the execution of the above command the site will be disabled, i.e. the site will not be accessible".
 
@@ -60,16 +60,16 @@
           Use the command “./script_name manage site_name enable” <br>
           In our case, the command will be 
           
-            “./wordpress_script.sh manage site1 enable”
+            ./wordpress_script.sh manage site1 enable
 
       {After the execution of the above command the site will be successfully enabled} <br>
           The website will be accessible again using the same_ip: 80
 
-    4.6.To delete the website <br>
+    4.5.To delete the website <br>
           Use the command “./script_name delete site_name” <br>
           In our case, the command will be 
           
-            ./wordpress_script.sh delete site1. <br>
+            ./wordpress_script.sh delete site1.
 
       {After the execution of the above command, our site will be successfully deleted, all the containers created.   
           (WordPress, MySQL) will be deleted and ports mapped will be released}.
