@@ -45,7 +45,7 @@
   
     4.2.  Once the above command is successfully executed, we can access our website using the link provided or by using <br>       
     
-            public_ip_of_ec2:80” or “localhost:80
+            public_ip_of_ec2:80 or localhost:80
 
     4.3   To disable our website for some point of time. <br>
           Use command as  <br>
