@@ -1,19 +1,19 @@
 #!/bin/bash
-# Check if Docker is installed
+# To  Check whether Docker is installed on our system or not?
 if ! command -v docker &> /dev/null; then
     echo "Docker not found. Installing Docker..."
     sudo apt update
     sudo apt install -y docker.io
 fi
 
-# Check if Docker Compose is installed
+# To Check whether Docker Compose is installed or not?
 if ! command -v docker-compose &> /dev/null; then
     echo "Docker Compose not found. Installing Docker Compose..."
     sudo apt update
     sudo apt install -y docker-compose
 fi
 
-# Function to create WordPress site
+# Here is our  function to create a WordPress site
 create_site() {
     local site_name="$1"
     
@@ -21,7 +21,7 @@ create_site() {
     mkdir "$site_name"
     cd "$site_name"
     
-    # Create docker-compose.yml file
+    # Here is our docker-compose.yml file
     cat <<EOT > docker-compose.yml
 version: '3'
 services:
@@ -50,18 +50,18 @@ networks:
   wordpress-network:
     driver: bridge
 EOT
-    # Create a directory for WordPress files
+    # Creating a directory to store our  WordPress files
     mkdir wordpress 
     # Create /etc/hosts entry
     echo "54.89.146.165 $site_name" | sudo tee -a /etc/hosts
 
-    # Start containers
+     # Start containers in deamon mode (i.e detached mode)
     sudo docker-compose up -d
 
     echo "Site $site_name created and running at http://$site_name"
 }
 
-# Function to enable/disable the site
+# Our function to enable/disable the site
 manage_site() {
     local site_name="$1"
     local action="$2"
@@ -79,7 +79,7 @@ manage_site() {
     fi
 }
 
-# Function to delete the site
+# Here is the function to delete the site
 delete_site() {
     local site_name="$1"
     
@@ -88,13 +88,13 @@ delete_site() {
     cd ..
     sudo rm -rf "$site_name"
     
-    # Remove /etc/hosts entry
+    # To Remove /etc/hosts entry
     sudo sed -i "/$site_name/d" /etc/hosts
     
     echo "Site $site_name deleted"
 }
 
-# Main script
+# Our Main function/script which will execute first
 
 if [ $# -lt 2 ]; then
     echo "Usage: $0 create <site_name>"
