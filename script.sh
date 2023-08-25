@@ -1,19 +1,19 @@
 #!/bin/bash
-# To  Check whether Docker is installed on our system or not?
+# Check if Docker is installed
 if ! command -v docker &> /dev/null; then
     echo "Docker not found. Installing Docker..."
     sudo apt update
     sudo apt install -y docker.io
 fi
 
-# To Check whether Docker Compose is installed or not?
+# Check if Docker Compose is installed
 if ! command -v docker-compose &> /dev/null; then
     echo "Docker Compose not found. Installing Docker Compose..."
     sudo apt update
     sudo apt install -y docker-compose
 fi
 
-# Here is our  function to create a WordPress site
+# Function to create WordPress site
 create_site() {
     local site_name="$1"
     
@@ -21,45 +21,47 @@ create_site() {
     mkdir "$site_name"
     cd "$site_name"
     
-    # Here is our docker-compose.yml file
+    # Create docker-compose.yml file
     cat <<EOT > docker-compose.yml
 version: '3'
 services:
-  
   wordpress:
-    image: wordpress:latest
+    depends_on:
+      - db
+    image: 'wordpress:latest'
     ports:
-      - "80:80"
+      - '80:80'
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress_password
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: example
     volumes:
       - './wordpress:/var/www/html'
-    depends_on:
-      - db
+    networks:
+      - wordpress-network
   db:
-    image: mysql:5.7
+    image: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress_password
-
+      MYSQL_ROOT_PASSWORD: example
+    networks:
+      - wordpress-network
+networks:
+  wordpress-network:
+    driver: bridge
 EOT
-    # Creating a directory to store our  WordPress files
+    # Create a directory for WordPress files
     mkdir wordpress 
     # Create /etc/hosts entry
-    echo "54.172.37.164 $site_name" | sudo tee -a /etc/hosts
+    echo "54.89.146.165 $site_name" | sudo tee -a /etc/hosts
 
-    # Start containers in deamon mode (i.e detached mode)
+    # Start containers
     sudo docker-compose up -d
 
     echo "Site $site_name created and running at http://$site_name"
 }
 
-# Our function to enable/disable the site
+# Function to enable/disable the site
 manage_site() {
     local site_name="$1"
     local action="$2"
@@ -77,7 +79,7 @@ manage_site() {
     fi
 }
 
-# Here is the function to delete the site
+# Function to delete the site
 delete_site() {
     local site_name="$1"
     
@@ -86,13 +88,13 @@ delete_site() {
     cd ..
     sudo rm -rf "$site_name"
     
-    # To Remove /etc/hosts entry
+    # Remove /etc/hosts entry
     sudo sed -i "/$site_name/d" /etc/hosts
     
     echo "Site $site_name deleted"
 }
 
-# Our Main function/script which will execute first
+# Main script
 
 if [ $# -lt 2 ]; then
     echo "Usage: $0 create <site_name>"
