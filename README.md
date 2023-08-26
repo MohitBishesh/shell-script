@@ -2,6 +2,7 @@
     For Example: we can use the vim editor as follows: <br>
     
             vim wordpress_script.sh
+<img width="350" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/5aa14609-f7ad-45fb-9f6c-5443707bfcb9">
 
     Press “i” to shift to inset mode and enable typing or pasting the given script. <br>
     
