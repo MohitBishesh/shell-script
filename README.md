@@ -1,4 +1,4 @@
-<img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/9a9bc9a1-dabf-4e0a-bd6d-2a25af58dd80">1. Firstly, use any editor to create your .sh file and paste the given script inside that .sh file.
+1. Firstly, use any editor to create your .sh file and paste the given script inside that .sh file.
     For Example: we can use the vim editor as follows: <br>
     
             vim wordpress_script.sh
@@ -113,7 +113,8 @@
       {After the execution of the above command the site will be successfully enabled} <br>
           The website will be accessible again using the same_ip: 80
 
-<br>
+<be>
+
 <img width="881" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/85fbe4f0-0215-4fdb-9276-cff54e800a95">
 
     4.5.To delete the website <br>
