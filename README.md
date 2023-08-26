@@ -86,8 +86,7 @@ Hit enter over the "yes" button on the screen to save and exit.
 <br>
 
 <img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/971e1480-552b-47cc-aa8e-4bcb841a4a27">
-
-
+<br>
 <br>
 <br>
 4.3   To disable our website for some point of time. <br>
