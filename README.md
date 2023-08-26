@@ -66,6 +66,7 @@ Hit enter over the "yes" button on the screen to save and exit.
 
 
 <br>
+<br>
 4.2.  Once the above command is successfully executed, we can access our website using the link provided or by using public_ip_of_ec2:80 or localhost:80
 
 <img width="863" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/321bd004-e834-40af-a585-7e39b19b041e">
@@ -87,7 +88,7 @@ Hit enter over the "yes" button on the screen to save and exit.
 <img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/971e1480-552b-47cc-aa8e-4bcb841a4a27">
 
 
-
+<br>
 <br>
 4.3   To disable our website for some point of time. <br>
           Use command as  <br>
@@ -105,7 +106,8 @@ Hit enter over the "yes" button on the screen to save and exit.
 <img width="877" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/c6a9e441-aad4-42ca-8795-46e9c240d240">
 
 <br>
-4.5.  To enable the website. <br>
+<br>
+4.4.  To enable the website. <br>
           Use the command “./script_name manage site_name enable” <br>
           In our case, the command will be 
           
@@ -120,6 +122,7 @@ Hit enter over the "yes" button on the screen to save and exit.
 <br>
 <img width="889" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/12322d1b-c8d6-460d-b1a0-b2a9a3a61a72">
 
+<br>
 <br>
 4.5.To delete the website <br>
           Use the command “./script_name delete site_name” <br>
