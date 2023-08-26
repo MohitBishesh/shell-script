@@ -103,7 +103,6 @@ Hit enter over the "yes" button on the screen to save and exit.
 {After the execution of the above command the site will be disabled, i.e. the site will not be accessible".
 
 <img width="877" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/c6a9e441-aad4-42ca-8795-46e9c240d240">
-
 <br>
 <br>
 4.4.  To enable the website. <br>
@@ -120,7 +119,6 @@ Hit enter over the "yes" button on the screen to save and exit.
 
 <br>
 <img width="889" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/12322d1b-c8d6-460d-b1a0-b2a9a3a61a72">
-
 <br>
 <br>
 4.5.To delete the website <br>
