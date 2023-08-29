@@ -120,8 +120,8 @@ Hit enter over the "yes" button on the screen to save and exit.
 
 <br>
 
-<img width="863" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/321bd004-e834-40af-a585-7e39b19b041e">
 
+<img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/8f6c1aa1-acaf-41c7-88d5-9684cd2da928">
 
 
 
@@ -129,7 +129,7 @@ Hit enter over the "yes" button on the screen to save and exit.
           The website will be accessible again using the same_ip: 80
 
 <br>
-<img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/8f6c1aa1-acaf-41c7-88d5-9684cd2da928">
+<img width="863" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/321bd004-e834-40af-a585-7e39b19b041e">
 <br>
 <br>
 <br>
