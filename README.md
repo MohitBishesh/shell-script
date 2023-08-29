@@ -114,13 +114,15 @@ Hit enter over the "yes" button on the screen to save and exit.
             ./wordpress_script.sh manage site1 enable
 
 <br>
-<img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/8f6c1aa1-acaf-41c7-88d5-9684cd2da928">
+<img width="889" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/12322d1b-c8d6-460d-b1a0-b2a9a3a61a72">
+
+
 
 {After the execution of the above command the site will be successfully enabled} <br>
           The website will be accessible again using the same_ip: 80
 
 <br>
-<img width="889" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/12322d1b-c8d6-460d-b1a0-b2a9a3a61a72">
+<img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/8f6c1aa1-acaf-41c7-88d5-9684cd2da928">
 <br>
 <br>
 4.5.To delete the website <br>
