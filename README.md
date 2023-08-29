@@ -69,6 +69,7 @@ Hit enter over the "yes" button on the screen to save and exit.
 <br>
 4.2.  Once the above command is successfully executed, we can access our website using the link provided or by using public_ip_of_ec2:80 or localhost:80
 
+<br>
 <img width="863" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/321bd004-e834-40af-a585-7e39b19b041e">
 <br>
 <br>
