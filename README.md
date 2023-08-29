@@ -67,6 +67,7 @@ Hit enter over the "yes" button on the screen to save and exit.
 
 <br>
 <br>
+<br>
 4.2.  Once the above command is successfully executed, we can access our website using the link provided or by using public_ip_of_ec2:80 or localhost:80
 
 <br>
@@ -99,12 +100,14 @@ Hit enter over the "yes" button on the screen to save and exit.
 
 <br>
 <img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/cb9271af-b1cd-4171-ad05-917d20dc26fa">
-
+<br>
+<br>
 <br>
 {After the execution of the above command the site will be disabled, i.e. the site will not be accessible".
 
 <img width="863" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/321bd004-e834-40af-a585-7e39b19b041e">
 
+<br>
 <br>
 <br>
 4.4.  To enable the website. <br>
@@ -125,6 +128,7 @@ Hit enter over the "yes" button on the screen to save and exit.
 <img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/8f6c1aa1-acaf-41c7-88d5-9684cd2da928">
 <br>
 <br>
+<br>
 4.5.To delete the website <br>
           Use the command “./script_name delete site_name” <br>
           In our case, the command will be 
@@ -132,8 +136,9 @@ Hit enter over the "yes" button on the screen to save and exit.
             ./wordpress_script.sh delete site1.
 
 <img width="960" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/a9f748e4-8329-4c3a-a42a-eae8d3baf0a9">
+<br>
 {After the execution of the above command, our site will be successfully deleted, all the containers created.   
           (WordPress, MySQL) will be deleted and ports mapped will be released}.
-
+<br>
 <img width="877" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/c6a9e441-aad4-42ca-8795-46e9c240d240">
 
