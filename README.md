@@ -102,7 +102,8 @@ Hit enter over the "yes" button on the screen to save and exit.
 <br>
 {After the execution of the above command the site will be disabled, i.e. the site will not be accessible".
 
-<img width="877" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/c6a9e441-aad4-42ca-8795-46e9c240d240">
+<img width="863" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/321bd004-e834-40af-a585-7e39b19b041e">
+
 <br>
 <br>
 4.4.  To enable the website. <br>
@@ -131,4 +132,5 @@ Hit enter over the "yes" button on the screen to save and exit.
 {After the execution of the above command, our site will be successfully deleted, all the containers created.   
           (WordPress, MySQL) will be deleted and ports mapped will be released}.
 
-         
+<img width="877" alt="image" src="https://github.com/MohitBishesh/shell-script/assets/74617917/c6a9e441-aad4-42ca-8795-46e9c240d240">
+
