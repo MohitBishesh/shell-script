@@ -13,6 +13,29 @@ if ! command -v docker-compose &> /dev/null; then
     sudo apt install -y docker-compose
 fi
 
+# Function to create Nginx configuration
+create_nginx_config() {
+    local nginx_config_dir="nginx-config"
+    local nginx_config_file="$nginx_config_dir/nginx.conf"
+
+    mkdir -p "$nginx_config_dir"
+
+    cat <<EOT > "$nginx_config_file"
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        proxy_pass http://wordpress:80;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+}
+EOT
+}
+
 # Here is our  function to create a WordPress site
 create_site() {
     local site_name="$1"
@@ -20,42 +43,50 @@ create_site() {
     # Create directory for the site
     mkdir "$site_name"
     cd "$site_name"
-    
+
     # Here is our docker-compose.yml file
     cat <<EOT > docker-compose.yml
 version: '3'
 services:
   wordpress:
-    depends_on:
-      - db
-    image: 'wordpress:latest'
+    image: wordpress:latest
     ports:
-      - '80:80'
+      - "80:80"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress_password
     volumes:
       - './wordpress:/var/www/html'
-    networks:
-      - wordpress-network
+    depends_on:
+      - db
   db:
-    image: mysql
+    image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: example
-    networks:
-      - wordpress-network
-networks:
-  wordpress-network:
-    driver: bridge
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress_password
+  nginx:
+    image: nginx:latest
+    volumes:
+      - './nginx-config:/etc/nginx/conf.d'
+    ports:
+      - "8080:80"
+    depends_on:
+      - wordpress
 EOT
     # Creating a directory to store our  WordPress files
     mkdir wordpress 
-    # Create /etc/hosts entry
-    echo "54.89.146.165 $site_name" | sudo tee -a /etc/hosts
 
-     # Start containers in deamon mode (i.e detached mode)
+    # Create Nginx configuration
+    create_nginx_config
+    
+    # Create /etc/hosts entry
+    echo "18.207.201.222 $site_name" | sudo tee -a /etc/hosts
+
+    # Start containers in deamon mode (i.e detached mode)
     sudo docker-compose up -d
 
     echo "Site $site_name created and running at http://$site_name"
@@ -110,6 +141,7 @@ case "$command" in
     "create")
         create_site "$site_name"
         ;;
+        
     "manage")
         manage_action="$3"
         manage_site "$site_name" "$manage_action"
