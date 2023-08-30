@@ -84,7 +84,7 @@ EOT
     create_nginx_config
     
     # Create /etc/hosts entry
-    echo "18.207.201.222 $site_name" | sudo tee -a /etc/hosts
+    echo "127.0.0.1 $site_name" | sudo tee -a /etc/hosts
 
     # Start containers in deamon mode (i.e detached mode)
     sudo docker-compose up -d
